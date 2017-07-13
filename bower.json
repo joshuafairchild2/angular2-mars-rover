@@ -1,0 +1,20 @@
+{
+  "name": "mars-rover",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Joshua <Joshua.fairchild>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
