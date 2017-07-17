@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { MarsRoverAPIPhotos } from './../mars-rover-api-photos.service';
+import { PhotoService } from './../photo.service';
 
 @Component({
   selector: 'app-rover-form',
   templateUrl: './rover-form.component.html',
   styleUrls: ['./rover-form.component.css'],
-  providers: [MarsRoverAPIPhotos]
+  providers: [MarsRoverAPIPhotos, PhotoService]
 })
 export class RoverFormComponent implements OnInit {
   photos: any[] = null;
@@ -26,6 +27,11 @@ export class RoverFormComponent implements OnInit {
       }
       else this.noPhotos = true;
     });
+  }
+
+  saveRoverImages(date: string, camera: string): void {
+    this.marsAPI.saveImages(date, camera);
+    alert(`The images from ${date} taken by the ${camera} camera have been saved to the database.`);
   }
 
   ngOnInit() {

@@ -1,4 +1,5 @@
 <h1 class="text-center">Curiousity Images</h1>
+<h3 class="text-center"><a routerLink="user/photos">View Your Saved Photos</a></h3>
 
 <form class="well">
   <div class="form-group">
@@ -16,6 +17,7 @@
     </select>
   </div>
   <button class='btn btn-block btn-primary' (click)="getRoverImages(roverDate.value, roverCamera.value)">Get Photos</button>
+  <button (click)='saveRoverImages(roverDate.value, roverCamera.value)' class="btn btn-block btn-info">Save photos</button>
 </form>
 <div *ngIf='photos'>
   <app-photos-list [childPhotos]='photos'></app-photos-list>
